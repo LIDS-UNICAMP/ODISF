@@ -1,3 +1,6 @@
+externals/*/*
+bin/*
+
 # Prerequisites
 *.d
 
