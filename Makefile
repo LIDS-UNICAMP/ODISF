@@ -123,11 +123,7 @@ $(DEMO_DIR)/%:
 	$(CC) $(CFLAGS) $(INCS) $@.c -o $(BIN_DIR)/$(@F) $(LIBS_LD) $(LIBS_LINK)
 
 # Cleaning --------------------------------------------------------------------
-tidy:
-	$(RM) -r $(BIN_DIR)
-
 clean: tidy
+	$(RM) -r $(BIN_DIR)
 	$(RM) -r $(OBJ_DIR)
 	$(RM) -r $(LIB_DIR)
-
-refresh: clean lib

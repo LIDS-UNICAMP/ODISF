@@ -35,16 +35,9 @@ make
 make all
 ```
 
-For removing the generated files, the following rules are provided.
+For removing the generated files, one may run the following rule for deleting all the files generated from compilation
 ```bash
-make tidy
 make clean
-```
-The first one only deletes the binary files generated from compiling the demonstration programs; whereas the second goes beyond and deletes the object files and the library file as well.
-
-For convenience during implementation, the rule presented below offers a simple and easy approach for recompiling all library (but not the demonstration programs) from scratch.
-```bash
-make refresh
 ```
 
 ### Running
