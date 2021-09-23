@@ -35,7 +35,7 @@ make
 make all
 ```
 
-For removing the generated files, one may run the following rule for deleting all the files generated from compilation
+For removing the files generated from compilation, one may run the following rule.
 ```bash
 make clean
 ```
