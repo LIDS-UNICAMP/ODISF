@@ -353,25 +353,6 @@ _iftForestStats *_iftCalcForestStats
 // SEED SAMPLING
 //===========================================================================//
 /*
-  Calculates the stride within each axis in order to sample the respective 
-  proportional (to its length) quantity of seeds.
-*/
-void _iftCalcAxisStride
-(const iftODISF *odisf, float *xstride, float *ystride)
-{
-  #ifdef IFT_DEBUG //--------------------------------------------------------//
-  assert(odisf != NULL);
-  assert(xstride != NULL);
-  assert(ystride != NULL);
-  #endif //------------------------------------------------------------------//
-  float stride;
-
-  stride = sqrtf(odisf->mimg->n/(float)odisf->n0);
-
-  (*xstride) = (*ystride) = stride;
-}
-
-/*
   Samples the desired initial number of seeds by a grid scheme selection. If a 
   candidate is within a forbidden location, it is not resampled.
 */
@@ -387,7 +368,7 @@ iftIntArray *_iftRunGridSampl
   iftIntArray *seeds;
 
   // Calculate each axis' stride for equal distribution of seeds
-  _iftCalcAxisStride(odisf, &xstride, &ystride);
+  xstride = ystride = sqrtf(odisf->mimg->n/(float)odisf->n0);
   
   if(xstride < 1.0 || ystride < 1.0) // If jump size may fall in the same spel
     iftError("Excessive number of seeds!", "_iftRunGridSampl");
@@ -398,7 +379,7 @@ iftIntArray *_iftRunGridSampl
   tmp_seeds = NULL; // Temporary storage for agglomerating the seed indexes
   for(int y = y0; y <= yf; y = (int)(y + ystride)) // For each y-index
   {
-    for(int x = x0; x <= xf; x = (int)(x + xstride)) // For each z-index
+    for(int x = x0; x <= xf; x = (int)(x + xstride)) // For each x-index
     {
       int curr_idx;
       iftVoxel curr_vxl;
