@@ -1,7 +1,7 @@
 ## Object-based Dynamic and Iterative Spanning Forest (ODISF)
 
 This is the implementation of the superpixel segmentation method _Object-based Dynamic and Iterative Spanning Forest_(ODISF) as proposed in
-- **F.Belém, B.Perret, J.Cousty, S.Guimarães, A.Falcão.** _Towards a Simple and Efficient Object-based Superpixel Delineation Framework_. In 34th International Conference on Graphics, Patterns and Images (SIBGRAPI), pg 346-353. 2021.
+- **F.Belém, B.Perret, J.Cousty, S.Guimarães, A.Falcão.** [_Towards a Simple and Efficient Object-based Superpixel Delineation Framework_](https://ieeexplore.ieee.org/document/9643123). In 34th International Conference on Graphics, Patterns and Images (SIBGRAPI), pg 346-353. 2021.
 
 This software includes a program for running the ODISF method, and another one for assisting the visualization of the segmentation by overlaying the superpixel borders. Please cite the aforementioned paper if you use any of this software in your own project.
 
